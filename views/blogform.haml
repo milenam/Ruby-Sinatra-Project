@@ -1,0 +1,16 @@
+%form{:method => "post", :enctype => "multipart/form-data"}
+ %lable title
+ %input{:type => "text", :name => "title"}
+
+ %br
+
+ %lable body
+ %textarea{:name => "body"}
+
+ %br
+
+ %input{:type => "file", :name => "image"}
+
+ %br
+ 
+ %input{:type => "submit", :value => "Create Post"}

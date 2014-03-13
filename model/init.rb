@@ -1,0 +1,23 @@
+require 'sqlite3'
+
+# remove sqlite file
+if File.exists? "blog.sqlite"
+    File.delete("blog.sqlite")
+end
+
+db = SQLite3::Database.open('blog.sqlite')
+
+# Create table if it does not exist.
+db.execute <<SQL
+    CREATE TABLE posts(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title VARCHAR(255),
+        body TEXT,
+        image IMAGE,
+        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+    );
+SQL
+
+# Add some dummy posts
+
+

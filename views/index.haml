@@ -1,0 +1,11 @@
+#posts
+ - @posts.each do |post|
+  .post
+   %a{:href => "/post/#{post[:id]}"}
+   
+    %h2= post[:title]
+
+   %div= post[:image]
+   %time= post[:timestamp]
+   %p= post[:body]
+      
